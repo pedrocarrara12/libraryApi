@@ -3,6 +3,7 @@ package com.api.livros.libraryapi.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.UUID;
 @Table(name = "autor")
 @Getter
 @Setter
+@ToString
 public class Autor {
     @Deprecated
     public Autor() {
@@ -37,7 +39,7 @@ public class Autor {
     @Column(name = "nacionalidade",length = 50,nullable = false)
     private String nacionalidade;
 
-    @OneToMany(mappedBy = "idAutor")
+    @OneToMany(mappedBy = "autor")
     private List<Livro> livros;
 }
 

@@ -2,6 +2,7 @@ package com.api.livros.libraryapi.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "livro")
 @Data
+@ToString
 public class Livro {
 
     @Id
@@ -36,7 +38,7 @@ public class Livro {
 
     @ManyToOne
     @JoinColumn(name = "id_autor")
-    private Autor idAutor;
+    private Autor autor;
     @Deprecated
     public Livro() {
     }
